@@ -18,7 +18,7 @@ jobs:
   test:
     needs: build
     uses: hatrithuy/SNS_Test/.github/workflows/selenium-ci.yml@main
-    # gọi sang workflow test ở repo khác
+    with: {}
     secrets: 
       TOKEN: ${{ secrets.PAT_TOKEN }}
 
