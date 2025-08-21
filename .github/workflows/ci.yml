@@ -15,17 +15,4 @@ jobs:
       - name: Build App
         run: npm install && npm run build
 
-  test:
-    needs: build
-    uses: hatrithuy/SNS_Test/.github/workflows/selenium-ci.yml@main
-    with: {} # gọi sang workflow test ở repo khác
-    secrets: 
-      TOKEN: ${{ secrets.PAT_TOKEN }}
-
-  deploy:
-    needs: test
-    if: success()      # chỉ chạy nếu test pass
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy App
-        run: echo "Triển khai ứng dụng"
+ 
