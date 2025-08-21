@@ -19,7 +19,8 @@ jobs:
     needs: build
     uses: hatrithuy/SNS_Test/.github/workflows/selenium-ci.yml@main
     # gọi sang workflow test ở repo khác
-    secrets: inherit   # cho phép truyền secrets từ dev repo sang test repo
+    secrets: 
+      TOKEN: ${{ secrets.PAT_TOKEN }}
 
   deploy:
     needs: test
